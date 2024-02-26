@@ -6,6 +6,11 @@ render(<Dog/>)
 })
 //se tiene que llamar a render y aqui hay que pasarle el componente.
 
+test('Should match snapshot' ,() => {
+    const { container } = render (<Dog />)
+    expect (container).toMatchSnapshot()
+})
+
 
 test('should render a dog name', () => {
     render (<Dog name= "India" />)
