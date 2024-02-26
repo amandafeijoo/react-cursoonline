@@ -1,7 +1,12 @@
-import { isEditable } from "@testing-library/user-event/dist/utils";
-import { isAdult, modifyArray } from "./helpers";
+// import { isEditable } from "@testing-library/user-event/dist/utils";
+import { isAdult, modifyArray, sumNumbersOfArray, } from "./helpers";
 
-// Describe sirve para agrupar por funcion-test
+// Describe=> sirve para agrupar por funcion-test
+// las logicas no pueden estar dentro de un componente es muy dificil 
+//testear siempre hay que sacarlo afuera
+// se abre helpers, import en helpers !! 
+// logica de negocio si se cambia a vue o angular se puede llevar estas frameworks porque al final ya no forma parte de react ninguna
+// logica de negocio debe estar dentro de componente.
 
 describe('modifyArray', () => {
    
@@ -43,7 +48,17 @@ describe ('isAdult', () => {
         expect(isAdult(15)).toBeFalsy()
     })
 
+})
 
+describe ('sumNumbersOfArray', () => {
+    test('Should return a numbers',() => {
+        expect(sumNumbersOfArray([1])).toBe(1)
+    })
+    test('Should throw a exception if numbers param is not an array' ,() => {
+        expect(sumNumbersOfArray).toThrow('Numbers is not an array')
+    })
 
-
+    test('Should return 5', () => {
+        expect(sumNumbersOfArray([3,2])).toBe(5)
+    })
 })
