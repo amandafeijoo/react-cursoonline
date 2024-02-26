@@ -7,7 +7,7 @@ const Dog = ({name, age, img, children, colors }) => {
         console.log(colors)
 
      return <div> 
-        <img src= {img} height='300px' alt= 'Luna' />
+        <img src= {img} height='300px' alt= 'India' />
         <p> {name} </p>
         <p>{age} </p>
         <p> {children} </p>
